@@ -23,5 +23,27 @@ namespace MyAPI.Controllers
             }
             return true;
         }
+
+        [HttpGet]
+        public async Task<bool> GetNewInvoice(CreateNewInvoiceRequest request)
+        {
+            Console.WriteLine(request.CustomerID);
+            foreach (var invoiceLine in request.InvoiceLines)
+            {
+                Console.WriteLine(invoiceLine.ProductID);
+            }
+            return true;
+        }
+
+        //[HttpDelete]
+        //public async Task<bool> GetNewInvoice(CreateNewInvoiceRequest request)
+        //{
+        //    Console.WriteLine(request.CustomerID);
+        //    foreach (var invoiceLine in request.InvoiceLines)
+        //    {
+        //        Console.WriteLine(invoiceLine.ProductID);
+        //    }
+        //    return true;
+        //}
     }
 }
